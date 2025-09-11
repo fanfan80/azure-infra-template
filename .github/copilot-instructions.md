@@ -6,30 +6,33 @@
 - When create terraform templates, group related resources into modules, and use variables and outputs to pass data between modules
 - folder structure:
 azure-infra-template/
-  modules/
-    <feature-or-resource>/
-      main.tf
-      variables.tf
-      outputs.tf
-      README.md
-  environments/
-    dev/
-      main.tf
-      variables.tf
-    prod/
-      main.tf
-      variables.tf
-  scripts/
-    <helper-scripts>.sh
-  .github/
-    copilot-instructions.md
-  README.md
+            modules/
+              <feature-or-resource>/
+                main.tf
+                variables.tf
+                outputs.tf
+                README.md
+            environments/
+              dev/
+                main.tf
+                variables.tf
+              prod/
+                main.tf
+                variables.tf
+            scripts/
+              <helper-scripts>.sh
+            .github/
+              copilot-instructions.md
+            README.md
 
 
 ## Naming Conventions
 - Use PascalCase for component names, interfaces, and type aliases
 - Use camelCase for variables, functions, and methods
 - Prefix private class members with underscore (_)
+- folder naming:
+  - use hyphens (-) to separate words in folder names (e.g., data-factory, blob-storage)
+  - avoid using underscores (_) or camelCase in folder names
 - Use ALL_CAPS for constants
 
 ## Code Quality
