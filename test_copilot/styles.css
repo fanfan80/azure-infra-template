@@ -1,0 +1,198 @@
+/* styles.css - Modern, responsive, accessible task manager */
+
+:root {
+  --primary: #4f8cff;
+  --danger: #ff4f4f;
+  --success: #4fff8c;
+  --bg: #f7f9fa;
+  --text: #222;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body.dark {
+  --primary: #90cdf4;
+  --danger: #ff6b6b;
+  --success: #38e8a5;
+  --bg: #181a1b;
+  --text: #f1f5f9;
+}
+
+body {
+  transition: background 0.3s, color 0.3s;
+}
+
+#dark-mode-toggle {
+  background: var(--bg);
+  color: var(--primary);
+  border: 1px solid #e0e7ef;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  margin-left: 0.5rem;
+}
+
+#dark-mode-toggle.active,
+#dark-mode-toggle:focus {
+  background: var(--primary);
+  color: #fff;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+.container {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.filter-btn {
+  background: #f1f5f9;
+  color: var(--primary);
+  border: 1px solid #e0e7ef;
+  border-radius: var(--radius);
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.filter-btn.active,
+.filter-btn:focus {
+  background: var(--primary);
+  color: #fff;
+  outline: none;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background: #2563eb;
+}
+
+ul#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f5f9;
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+li.task-item.completed {
+  text-decoration: line-through;
+  color: #888;
+  background: #e0e7ef;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button.action {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+button.action:focus {
+  outline: 2px solid var(--primary);
+  background: #e0e7ef;
+}
+
+button.delete {
+  color: var(--danger);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (max-width: 500px) {
+  .container {
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  input[type="text"], button[type="submit"] {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+}
