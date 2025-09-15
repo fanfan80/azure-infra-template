@@ -7,6 +7,5 @@ resource "azurerm_storage_account" "integrity" {
 	location                 = var.location
 	account_tier             = "Standard"
 	account_replication_type = "LRS"
-	enable_blob_soft_delete  = true
 	tags = var.tags
 }
