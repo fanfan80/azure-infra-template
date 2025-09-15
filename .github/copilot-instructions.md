@@ -4,26 +4,7 @@
 - Use semantic HTML5 elements (header, main, section, article, etc.)
 - Prefer modern JavaScript (ES6+) features like const/let, arrow functions, and template literals
 - When create terraform templates, group related resources into modules, and use variables and outputs to pass data between modules
-- folder structure:
-azure-infra-template/
-            modules/
-              <feature-or-resource>/
-                main.tf
-                variables.tf
-                outputs.tf
-                README.md
-            environments/
-              dev/
-                main.tf
-                variables.tf
-              prod/
-                main.tf
-                variables.tf
-            scripts/
-              <helper-scripts>.sh
-            .github/
-              copilot-instructions.md
-            README.md
+
 
 
 ## Naming Conventions

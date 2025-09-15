@@ -1,0 +1,12 @@
+// main.tf for data integrity policy module
+// Example: Enabling soft delete for Azure Storage Account to protect data integrity
+
+resource "azurerm_storage_account" "integrity" {
+	name                     = var.storage_account_name
+	resource_group_name      = var.resource_group_name
+	location                 = var.location
+	account_tier             = "Standard"
+	account_replication_type = "LRS"
+	enable_blob_soft_delete  = true
+	tags = var.tags
+}
