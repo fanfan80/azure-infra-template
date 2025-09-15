@@ -16,10 +16,11 @@ resource "azurerm_storage_management_policy" "retention_policy" {
 			blob_types   = ["blockBlob"]
 		}
 
-		actions {
-			base_blob {
-				delete_after_days_since_modification_greater_than = var.delete_after_days
-			}
-		}
+		   actions {
+			   base_blob {
+				   delete_after_days_since_modification_greater_than = var.delete_after_days
+				   tier_to_archive_after_days_since_modification_greater_than = var.archive_after_days
+			   }
+		   }
 	}
 }

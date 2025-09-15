@@ -1,6 +1,6 @@
-// variables.tf for Azure Data Lake Storage Gen2
+// variables.tf for auditing security module
 variable "storage_account_name" {
-  description = "Name of the Data Lake storage account"
+  description = "Name of the storage account"
   type        = string
 }
 

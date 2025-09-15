@@ -1,0 +1,9 @@
+{
+  "storage_account_name": "",
+  "resource_group_name": "",
+  "location": "",
+  "tags": {
+    "environment": ""
+  },
+  "access_tier": "Hot"
+}

@@ -15,3 +15,8 @@ variable "delete_after_days" {
 	description = "Number of days after which blobs are deleted"
 	type        = number
 }
+
+variable "archive_after_days" {
+	description = "Number of days after which blobs are moved to archive tier"
+	type        = number
+}
