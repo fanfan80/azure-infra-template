@@ -1,9 +1,24 @@
 {
-  "storage_account_name": "",
-  "resource_group_name": "",
-  "location": "",
-  "tags": {
-    "environment": ""
-  },
-  "access_tier": "Hot"
+  "datalake": [
+    {
+      "name": "datalake1",
+      "resource_group": "rg-data",
+      "location": "eastus",
+      "tier": "Hot",
+      "tags": {
+        "env": "dev",
+        "owner": "team-a"
+      },
+      "medallion_layers": ["bronze", "silver", "gold"]
+    },
+    {
+      "name": "datalake2",
+      "resource_group": "rg-data",
+      "location": "westus",
+      "tags": {
+        "env": "prod",
+        "owner": "team-b"
+      }
+    }
+  ]
 }
