@@ -36,18 +36,11 @@ for root, dirs, files in os.walk(TEMPLATES_PATH):
     if "main.tf.j2" in files:
         template_file = os.path.join(root, "main.tf.j2")
         print(f"Found template: {template_file}, module: {module_name}")
+
     
-    # Only process if template_file exists
-    if template_file:
-        # Load template, render, etc.
-        pass
-
-    # Skip if no template
-    if not os.path.isfile(TEMPLATES_PATH):
-        continue
-
     # Determine checklist key (folder name or plural)
     checklist_key = module_name if module_name in checklist else f"{module_name}s"
+    
     if checklist_key not in checklist:
         continue
 
