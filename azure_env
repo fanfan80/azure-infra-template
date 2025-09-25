@@ -1,0 +1,16 @@
+{
+  "environmentName": "AzureCloud",
+  "homeTenantId": "149ec02b-dd91-4520-865e-c116832e8b64",
+  "id": "86d4d36b-be35-4891-a5d7-9bdf82b5c168",
+  "isDefault": true,
+  "managedByTenants": [],
+  "name": "Visual Studio Enterprise Subscription – MPN",
+  "state": "Enabled",
+  "tenantDefaultDomain": "bjss.com",
+  "tenantDisplayName": "BJSS Ltd",
+  "tenantId": "149ec02b-dd91-4520-865e-c116832e8b64",
+  "user": {
+    "name": "Xuemei.Fan@bjss.com",
+    "type": "user"
+  }
+}

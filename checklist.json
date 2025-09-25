@@ -1,9 +1,9 @@
 {
   "datalake": [
     {
-      "name": "datalake1",
-      "resource_group": "rg-data",
-      "location": "eastus",
+      "name": "datalakemadalliondev",
+      "resource_group": "dataops_rg",
+      "location": "Australia East",
       "tier": "Hot",
       "tags": {
         "env": "dev",
@@ -12,9 +12,9 @@
       "medallion_layers": ["bronze", "silver", "gold"]
     },
     {
-      "name": "datalake2",
-      "resource_group": "rg-data",
-      "location": "westus",
+      "name": "datalakedataopsprod",
+      "resource_group": "dataops_rg",
+      "location": "Australia East",
       "tags": {
         "env": "prod",
         "owner": "team-b"

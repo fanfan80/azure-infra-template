@@ -1,6 +1,7 @@
 import os
 import json
 from jinja2 import Environment, FileSystemLoader
+from utils import dict_to_hcl  # Import helper function
 
 # ----------------------------
 # Paths
@@ -22,6 +23,7 @@ with open(os.path.join(BASE_DIR, "../checklist.json")) as f:
 # Setup Jinja2 environment
 # ----------------------------
 env = Environment(loader=FileSystemLoader(TEMPLATES_PATH))
+env.globals['dict_to_hcl'] = dict_to_hcl  # make helper available in templates
 
 # ----------------------------
 # Collect rendered Terraform blocks
