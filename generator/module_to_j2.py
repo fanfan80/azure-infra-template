@@ -3,8 +3,15 @@ import os, re
 MODULES_DIR = "../modules"
 TEMPLATES_DIR = "../templates"
 
-for module_name in os.listdir(MODULES_DIR):
-    module_path = os.path.join(MODULES_DIR, module_name, "main.tf")
+for root, dirs, files in os.walk(MODULES_DIR):
+    # Skip folders without main.tf
+    if "main.tf" not in files:
+        continue
+
+    # Preserve subfolder structure
+    module_name = os.path.relpath(root, MODULES_DIR)
+    module_path = os.path.join(root, "main.tf")
+    
     if not os.path.isfile(module_path):
         continue
 

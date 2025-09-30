@@ -1,0 +1,8 @@
+// main.tf for data governance policy module
+// Example: Azure Policy Assignment for governance
+
+resource "azurerm_policy_assignment" "governance_assignment" {
+	name                 = {{ assignment_name }}
+	scope                = {{ scope }}
+	policy_definition_id = {{ policy_definition_id }}
+}
