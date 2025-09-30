@@ -13,7 +13,8 @@ tfplan
 *.tfvars.json
 
 # Keep lock file tracked
-!.terraform.lock.hcl
+!generated/.terraform.lock.hcl
+
 
 # Crash logs
 crash.log
