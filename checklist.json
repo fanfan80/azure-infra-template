@@ -1,10 +1,10 @@
 {
   "datalake": [
     {
-      "name": "datalakemadalliondev",
-      "resource_group": "dataops_rg",
+      "storage_account_name": "datalakemadalliondev",
+      "resource_group_name": "dataops_rg",
       "location": "Australia East",
-      "tier": "Hot",
+      "access_tier": "Hot",
       "tags": {
         "env": "dev",
         "owner": "team-a"
@@ -12,8 +12,8 @@
       "medallion_layers": ["bronze", "silver", "gold"]
     },
     {
-      "name": "datalakedataopsprod",
-      "resource_group": "dataops_rg",
+      "storage_account_name": "datalakedataopsprod",
+      "resource_group_name": "dataops_rg",
       "location": "Australia East",
       "tags": {
         "env": "prod",
