@@ -1,14 +1,14 @@
+// main.tf for Azure Data Lake Storage Gen2
 resource "azurerm_storage_account" "{{ name }}" {
-  name                     = "{{ name }}"
-  resource_group_name      = "{{ resource_group }}"
-  location                 = "{{ location }}"
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-  is_hns_enabled           = {{ is_hns_enabled | default(true) | lower }}
-  access_tier              = "{{ tier | default('Hot') }}"
-  tags                     = {{ dict_to_hcl(tags) }}
+	name                     = "{{ storage_account_name }}"
+	resource_group_name      = "{{ resource_group_name }}"
+	location                 = "{{ location }}"
+	account_tier             = "Standard"
+	account_replication_type = "LRS"
+	is_hns_enabled           = {{ is_hns_enabled | default(true) | lower }}
+	access_tier              = "{{ access_tier | default('Hot') }}"
+	tags                     = {{ dict_to_hcl(tags) }}
 }
-
 {% if medallion_layers %}
 {% for layer in medallion_layers %}
 resource "azurerm_storage_data_lake_gen2_filesystem" "{{ name }}_{{ layer }}" {

@@ -16,3 +16,31 @@ def dict_to_hcl(d: dict) -> str:
             v_str = f'"{v}"'
         items.append(f'{k} = {v_str}')
     return "{ " + ", ".join(items) + " }"
+
+def is_unquoted(value: str) -> bool:
+    """
+    Determine if a Terraform value should NOT be quoted in Jinja2.
+
+    Returns True if value is boolean (true/false) or numeric.
+    """
+    value = value.strip().lower()
+    if value in {"true", "false"}:
+        return True
+    try:
+        float(value)
+        return True
+    except ValueError:
+        return False
+
+if __name__ == "__main__":
+    # Simple test
+    test_dict = {
+        "env": "dev",
+        "owner": "team-a",
+        "tags": {
+            "project": "example",
+            "cost_center": "12345"
+        },
+        "numbers": [1, 2, 3]
+    }
+    print(dict_to_hcl(test_dict))
