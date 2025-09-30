@@ -2,12 +2,17 @@ cat <<EOL > .gitignore
 # Terraform directories
 .terraform/
 **/.terraform/
-.terraform.lock.hcl
 
 # Terraform state files
+# Terraform sensitive / generated files
+*.env
 *.tfstate
-*.tfstate.*
-*.backup
+*.tfstate.backup
+tfplan
+*.tfvars
+*.tfvars.json
+
+
 
 # Crash logs
 crash.log
