@@ -1,7 +1,7 @@
 {
   "datalake": [
     {
-      "storage_account_name": "datalakemadalliondev",
+      "storage_account_name": "datalakedev",
       "resource_group_name": "dataops_rg",
       "location": "Australia East",
       "access_tier": "Hot",
@@ -9,10 +9,21 @@
         "env": "dev",
         "owner": "team-a"
       },
-      "medallion_layers": ["raw", "curated", "conformed"]
+      "medallion_layers": [
+        {
+          "name": "raw",
+          "retention_policy": {
+            "delete_after_days": 30,
+            "archive_after_days": 90,
+            "prefix_match": "raw/"
+          }
+        },
+        { "name": "curated" },
+        { "name": "conformed" }
+      ]
     },
     {
-      "storage_account_name": "datalakedataopsprod",
+      "storage_account_name": "datalakedeltaprod",
       "resource_group_name": "dataops_rg",
       "location": "Australia East",
       "tags": {
