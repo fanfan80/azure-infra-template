@@ -9,7 +9,7 @@
         "env": "dev",
         "owner": "team-a"
       },
-      "medallion_layers": ["bronze", "silver", "gold"]
+      "medallion_layers": ["raw", "curated", "conformed"]
     },
     {
       "storage_account_name": "datalakedataopsprod",
